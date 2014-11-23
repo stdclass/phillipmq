@@ -15,7 +15,7 @@ const (
 
 func peek(w http.ResponseWriter, r *http.Request) {
     
-    channel := r.URL.Path[6:]
+    pool := r.URL.Path[6:]
     
  	fmt.Fprintf(w, "peek %s!", channel)
 }
@@ -26,7 +26,7 @@ func push(w http.ResponseWriter, r *http.Request) {
     
     message := string(data)
     
-    channel := r.URL.Path[6:]
+    pool := r.URL.Path[6:]
     
     if err != nil {
         fmt.Println("Error reading: ", err.Error())
@@ -34,7 +34,7 @@ func push(w http.ResponseWriter, r *http.Request) {
     
     messages = append(messages, message)
     
-    fmt.Fprintf(w, "push to channel %s!", channel)
+    fmt.Fprintf(w, "push to pool %s!", channel)
     fmt.Fprintf(w, "messagse %s!", messages)
     
     
