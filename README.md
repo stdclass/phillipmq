@@ -5,7 +5,7 @@ Message Queue in GO
 Add new Message
 ---
 
-Push "hello, world" to the pool `hello`
+Push "hello, world" to the channel `hello`
 
 curl -v -X POST http://localhost:8080/push/hello -d "hello, world"
 
